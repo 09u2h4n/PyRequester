@@ -68,3 +68,5 @@ You can install these dependencies using the following commands:
 PyWebWrench is a handy Python library for viewing web pages and making HTTP requests. You can open, control, and send requests to web pages using the specified browsers. For more information about usage and functionality, you can explore the source code of PyWebWrench. 🔍
 
 Feel free to contribute or report issues! 🙌
+
+I will edit the project that requests.Session as a subclass
