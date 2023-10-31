@@ -53,14 +53,12 @@ class PyWebWrench:
             browser.close()
         return page_content
 
-    def control_page(self, url: str):
+    def control_page(self):
         browser_name = self.__install_browser(self.browser_name)["browser_type"]
-        with sync_playwright() as p:
-            browser = p[browser_name].launch()
-            page = browser.new_page()
-            page.goto(url=url)
-            yield page
-            return
+        p = sync_playwright().start()
+        browser = p[browser_name].launch()
+        page = browser.new_page()
+        return page
 
     def get(url: str, params=None, **kwargs):
         response = requests.get(url=url, params=params, **kwargs)
