@@ -1,4 +1,4 @@
-# PyWebWrench Library 🖥️
+# PyWebWrench Library 🔧
 
 PyWebWrench is a Python library that enables you to view web pages and make HTTP requests using popular Python libraries such as Playwright and Requests.
 
@@ -51,7 +51,7 @@ print(response.text)
 -   Firefox ASAN
 -   Webkit
 
-## Dependencies 🔧
+## Dependencies 🖥️
 
 Before using PyWebWrench, make sure to install the following dependencies:
 
