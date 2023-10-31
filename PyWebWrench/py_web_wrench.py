@@ -59,7 +59,8 @@ class PyWebWrench:
             browser = p[browser_name].launch()
             page = browser.new_page()
             page.goto(url=url)
-            return page
+            yield page
+            return
 
     def get(url: str, params=None, **kwargs):
         response = requests.get(url=url, params=params, **kwargs)
