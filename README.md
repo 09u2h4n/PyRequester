@@ -1,17 +1,17 @@
-﻿# PyRequester Library 🖥️
+# PyWebWrench Library 🖥️
 
-PyRequester is a Python library that enables you to view web pages and make HTTP requests using popular Python libraries such as Playwright and Requests.
+PyWebWrench is a Python library that enables you to view web pages and make HTTP requests using popular Python libraries such as Playwright and Requests.
 
 ## Usage 🚀
 
-Follow these steps to use the PyRequester library:
+Follow these steps to use the PyWebWrench library:
 1. Import the Library 📦
 ```python
-from pyrequester import PyRequester
+from pyrequester import PyWebWrench
 ```
-3. Create a PyRequester Object 👷
+3. Create a PyWebWrench Object 👷
 ```python
-pr = PyRequester(browser_name="firefox") # You can choose a different browser.
+pr = PyWebWrench(browser_name="firefox") # You can choose a different browser.
 ```
 4. Render a Web Page 🌐
 To view a web page, use the `render_page` function:
@@ -27,7 +27,7 @@ page = pr.control_page(url="https://www.example.com")
 page.close()  # Don't forget to close the page when you're done.
 ```
 6. Make HTTP Requests 📞
-PyRequester uses the Requests library to make HTTP requests. You can use the `get`, `post`, `put`, `delete`, `patch`, and `head` functions for this purpose.
+PyWebWrench uses the Requests library to make HTTP requests. You can use the `get`, `post`, `put`, `delete`, `patch`, and `head` functions for this purpose.
 
 Example of a GET request:
 ```python
@@ -53,7 +53,7 @@ print(response.text)
 
 ## Dependencies 🔧
 
-Before using PyRequester, make sure to install the following dependencies:
+Before using PyWebWrench, make sure to install the following dependencies:
 
 -   Playwright
 -   Requests
@@ -65,6 +65,6 @@ You can install these dependencies using the following commands:
 
 ## Conclusion 🎉
 
-PyRequester is a handy Python library for viewing web pages and making HTTP requests. You can open, control, and send requests to web pages using the specified browsers. For more information about usage and functionality, you can explore the source code of PyRequester. 🔍
+PyWebWrench is a handy Python library for viewing web pages and making HTTP requests. You can open, control, and send requests to web pages using the specified browsers. For more information about usage and functionality, you can explore the source code of PyWebWrench. 🔍
 
 Feel free to contribute or report issues! 🙌
