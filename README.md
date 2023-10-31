@@ -7,7 +7,7 @@ PyWebWrench is a Python library that enables you to view web pages and make HTTP
 Follow these steps to use the PyWebWrench library:
 1. Import the Library 📦
 ```python
-from pyrequester import PyWebWrench
+from PyWebWrench.py_web_wrench import PyWebWrench
 ```
 3. Create a PyWebWrench Object 👷
 ```python
