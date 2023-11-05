@@ -1,6 +1,9 @@
 import subprocess
 import sys
+import typing
+import pathlib
 
+from playwright._impl._api_structures import ProxySettings
 import requests
 from playwright.sync_api import sync_playwright
 
@@ -53,10 +56,49 @@ class PyWebWrench:
             browser.close()
         return page_content
 
-    def control_page(self):
+    def control_page(self,
+        executable_path: typing.Optional[typing.Union[str, pathlib.Path]] = None,
+        channel: typing.Optional[str] = None,
+        args: typing.Optional[typing.List[str]] = None,
+        ignore_default_args: typing.Optional[
+            typing.Union[bool, typing.List[str]]
+        ] = None,
+        handle_sigint: typing.Optional[bool] = None,
+        handle_sigterm: typing.Optional[bool] = None,
+        handle_sighup: typing.Optional[bool] = None,
+        timeout: typing.Optional[float] = None,
+        env: typing.Optional[typing.Dict[str, typing.Union[str, float, bool]]] = None,
+        headless: typing.Optional[bool] = None,
+        devtools: typing.Optional[bool] = None,
+        proxy: typing.Optional[ProxySettings] = None,
+        downloads_path: typing.Optional[typing.Union[str, pathlib.Path]] = None,
+        slow_mo: typing.Optional[float] = None,
+        traces_dir: typing.Optional[typing.Union[str, pathlib.Path]] = None,
+        chromium_sandbox: typing.Optional[bool] = None,
+        firefox_user_prefs: typing.Optional[
+            typing.Dict[str, typing.Union[str, float, bool]]
+        ] = None):
         browser_name = self.__install_browser(self.browser_name)["browser_type"]
         p = sync_playwright().start()
-        browser = p[browser_name].launch()
+        browser = p[browser_name].launch(
+            executable_path=executable_path,
+            channel=channel,
+            args=args,
+            ignore_default_args=ignore_default_args,
+            handle_sigint=handle_sigint,
+            handle_sigterm=handle_sigterm,
+            handle_sighup=handle_sighup,
+            timeout=timeout,
+            env=env,
+            headless=headless,
+            devtools=devtools,
+            proxy=proxy,
+            downloads_path=downloads_path,
+            slow_mo=slow_mo,
+            traces_dir=traces_dir,
+            chromium_sandbox=chromium_sandbox,
+            firefox_user_prefs=firefox_user_prefs
+        )
         page = browser.new_page()
         return page
 
